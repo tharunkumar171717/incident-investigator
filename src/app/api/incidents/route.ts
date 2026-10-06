@@ -4,7 +4,7 @@ import { parseLogs } from "@/lib/agent/parse";
 import { dbError, handle, HttpError, parseBody, requireUser } from "@/lib/http";
 import { createIncidentSchema } from "@/lib/validation";
 
-export const maxDuration = 800;
+export const maxDuration = 300;
 
 export const POST = handle(async (req: Request) => {
   const { supabase, userId } = await requireUser();

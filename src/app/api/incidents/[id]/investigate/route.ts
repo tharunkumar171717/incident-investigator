@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { startInvestigation } from "@/lib/agent/start";
 import { handle, requireUser } from "@/lib/http";
 
-export const maxDuration = 800;
+export const maxDuration = 300;
 
 export const POST = handle(async (_req: Request, ctx: RouteContext<"/api/incidents/[id]/investigate">) => {
   const { id } = await ctx.params;

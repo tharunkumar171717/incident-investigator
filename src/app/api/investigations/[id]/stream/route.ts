@@ -4,7 +4,7 @@ import { handle, HttpError, requireUser } from "@/lib/http";
 import { adminClient } from "@/lib/supabase/admin";
 
 export const dynamic = "force-dynamic";
-export const maxDuration = 800;
+export const maxDuration = 300;
 
 /**
  * Server-Sent Events stream of an investigation's progress. Reads the rows the

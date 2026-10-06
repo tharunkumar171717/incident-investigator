@@ -270,8 +270,10 @@ register it in `src/lib/ai/index.ts`.
 
 - **Hosting.** Investigations run in the background with `after()` and take minutes.
   Run on a long-lived Node server (`npm run build && npm start`, Docker, Railway, a
-  VM) or a platform that supports a long `maxDuration` (set to 800s on the relevant
-  routes). For production, run the runner on a job queue.
+  VM) or a platform that supports a long `maxDuration`. The relevant routes set
+  300s (the Vercel Hobby limit); on Vercel set `AGENT_MAX_DURATION_SECONDS=240` so
+  a run finishes inside the function. On Vercel Pro, raise both (up to 800s). For
+  production, run the runner on a job queue.
 - **One GitHub identity per server.** This instance uses one server-level GitHub
   token. Users can connect any repository that token can see, optionally restricted
   by `GITHUB_ALLOWED_OWNERS`. Per-user GitHub OAuth would need an encrypted token
