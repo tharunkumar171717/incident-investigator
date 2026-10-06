@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Separate demo project (CommonJS) used as an investigation target.
+    "examples/**",
   ]),
 ]);
 
